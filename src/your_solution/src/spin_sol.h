@@ -10,6 +10,7 @@ class SpinSolution : public rclcpp::Node {
   SpinSolution();
  private:
     // your code here
+    
 };
 
 #endif //YOUR_SOLUTION_SRC_SPIN_SOL_H_
