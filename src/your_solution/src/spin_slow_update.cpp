@@ -20,6 +20,7 @@ SlowSolution::SlowSolution() : Node("slowsolution") {
   rclcpp::TimerBase::SharedPtr timer_;
   rclcpp::Publisher<ArrayMsg::SharedPtr::String>::SharedPtr publisher_;
 }
+njjnknjkn
 
 void SlowSolution::pos_callback(const ArrayMsg::SharedPtr msg) {
   RCLCPP_INFO(this->get_logger(), "Received position: [%f, %f]", msg->data[0], msg->data[1]);
