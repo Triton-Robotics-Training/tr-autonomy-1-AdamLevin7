@@ -12,10 +12,10 @@ SlowSolution::SlowSolution() : Node("slowsolution") {
     "measuredpos", 10, std::bind(&SlowSolution::pos_callback, this, std::placeholders::_1));
   
   vel_subscription_ = this->create_subscription<ArrayMsg>(
-    "measuredvel", 10, std::bind(&SlowSolution::vel_callback, this, std::placeholders::_1));
-  publisher_ = this->create_publisher<ArrayMsg::SharedPtr::String>("predictedpos", 10);
+    "measuredvel", 10, std::bind(&SlowSolution::vel_callback, this, std::placeholders::_2));
+  publisher_ = this->create_publisher<ArrayMsg::SharedPtr::float>("predictedpos", 10);
   timer_ = this->create_wall_timer(
-  500ms, std::bind(&MinimalPublisher::timer_callback, this));
+  500ms, std::bind(&SlowSolution::timer_callback, this));
   
   
 }
