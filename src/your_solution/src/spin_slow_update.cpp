@@ -17,8 +17,7 @@ SlowSolution::SlowSolution() : Node("slowsolution") {
   timer_ = this->create_wall_timer(
   500ms, std::bind(&MinimalPublisher::timer_callback, this));
   
-  rclcpp::TimerBase::SharedPtr timer_;
-  rclcpp::Publisher<ArrayMsg::SharedPtr::String>::SharedPtr publisher_;
+  
 }
 
 void SlowSolution::pos_callback(const ArrayMsg::SharedPtr msg) {
